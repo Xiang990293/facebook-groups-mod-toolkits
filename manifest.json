@@ -1,0 +1,28 @@
+{
+	"name":"Toolkits for Facebook Groups Moderators",
+	"manifest_version":3,
+	"version":"0.0.1",
+	"permissions": [
+		"storage",
+		"scripting",
+		"activeTab"
+	],
+	"action": {
+		"default_popup": "popup/index.html",
+		"default_icon": "icon.png"
+	},
+	"content_scripts": [
+		{
+			"js": ["content/content_script.js"],
+			"css": ["content/style.css"],
+			"matches": [
+				"https://www.facebook.com/groups/*"
+			]
+		}
+	],
+	"host_permissions": [
+		"https://www.facebook.com/groups/*"
+	],"background": {
+		"service_worker": "background.js"
+	}
+}
